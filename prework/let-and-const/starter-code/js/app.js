@@ -17,7 +17,7 @@ let totalClicks = 0;
 const views = [];
 const votes = [];
 
-function Product(name) {
+const Product = name => {
   this.name = name;
   this.path = 'img/' + name + '.jpg';
   this.votes = 0;
@@ -25,11 +25,11 @@ function Product(name) {
   allProducts.push(this);
 }
 
-function makeRandom() {
+const makeRandom = () => {
   return Math.floor(Math.random() * names.length);
 }
 
-function displayPics(){
+const displayPics = () => {
   while(viewed.length < 6){
     const rando = makeRandom();
     while(!viewed.includes(rando)){
@@ -51,7 +51,7 @@ function displayPics(){
   }
 }
 
-function handleClick(event) {
+const handleClick = event => {
   if (event.target.id === 'image_container') {
     return alert('Be sure to click directly on an image!!');
   }
@@ -73,7 +73,7 @@ function handleClick(event) {
   displayPics();
 }
 
-function showList() {
+const showList = () => {
   for(let i = 0; i < allProducts.length; i++) {
     const liEl = document.createElement('li');
     liEl.textContent = allProducts[i].name + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views';
@@ -81,7 +81,7 @@ function showList() {
   }
 }
 
-function makeChartData(){
+const makeChartData = () => {
   allProducts.forEach(function(product){
     labels.push(product.name);
     votes.push(product.votes);
@@ -90,7 +90,7 @@ function makeChartData(){
   });
 }
 
-function makeChart(){
+const makeChart = () => {
   makeChartData();
   const ctx = document.getElementById('chartypants').getContext('2d');
   new Chart(ctx, { //eslint-disable-line
