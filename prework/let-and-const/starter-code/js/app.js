@@ -1,12 +1,13 @@
 'use strict';
 
-const names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+const names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaunn', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 
 const leftImage = document.getElementById('left');
 const centerImage = document.getElementById('center');
 const rightImage = document.getElementById('right');
 
 let allProducts = [];
+
 const container = document.getElementById('image_container');
 const viewed = [];
 const labels = [];
@@ -84,6 +85,7 @@ function makeChartData(){
   allProducts.forEach(function(product){
     labels.push(product.name);
     votes.push(product.votes);
+
     views.push(product.views);
   });
 }
